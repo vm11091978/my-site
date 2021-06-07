@@ -1,0 +1,343 @@
+﻿body {
+	margin: 0 20px;
+	background-color: #F4E5C6;
+	background-position: center;
+	background-image: linear-gradient(0deg,rgba(244,229,198,0.0),rgba(244,229,198,0.9)),url(img/fon.png)
+}
+
+/* стили для шапки сайта */
+
+#elem {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #C4CD14;
+	font-size: 21px;
+    z-index: 1;
+}
+
+@media (max-width: 420px) {
+	#elem {font-size: 18px;}
+}
+
+#logo {
+	display: flex;
+	align-items: center;
+	font-size: 26px;
+	color: dimgray;
+}
+
+#bani {
+	width: 60px;
+	margin-right: 10px;
+}
+
+@media (max-width: 420px) {
+	#bani {display: none;}
+}
+
+#elem .button a {
+	padding: 3px 10px 5px;
+	color: black;
+	text-decoration: none;
+	border-radius: 20px;
+}
+
+#elem .button a:hover {
+	background-color: white;
+	color: #ADB211;
+	text-shadow: #C4CD14 0 0 1px;
+    /* цвет тени, смещение по гор. и вертикали, радиус размытия тени */
+}
+
+@media (max-width: 800px) {
+	#elem .button {display: none;}
+}
+
+.right {
+	display: flex;
+	align-items: center;
+}
+
+@media (max-width: 950px) {
+	.right {display: none;}
+}
+
+@media (max-width: 800px) {
+	.right {display: flex;}
+}
+
+.tele {
+	margin-left: 15px;
+}
+
+#tele {
+	font-size: 16px;
+	margin-top: 21px;
+	margin-bottom: -16px;
+}
+
+@media (max-width: 420px) {
+	.right i {display: none;}
+}
+
+@media (max-width: 420px) {
+	#tele {display: none;}
+}
+
+/* стили для гамбургера */
+
+#hamburger {
+	position: relative;
+	width: 56px;
+	display: none;
+}
+
+@media (max-width: 800px) {
+	#hamburger {display: flex;}
+}
+
+.hamburger:hover {
+	background-color: white;
+	border-radius: 10px;
+}
+
+#hamburger1 {
+	position: absolute;
+	padding: 3px 10px 5px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: #F4E5C6;
+	line-height: 1.5;
+	display: none;
+}
+
+#hamburger1 a {
+	display: block;
+	border-radius: 13px;
+	padding: 0 7px;
+	color: black;
+	text-decoration: none;
+}
+
+.hamburger:hover #hamburger1 {
+	display: block;
+}
+
+#hamburger1 a:hover {
+	color: blue;
+	background-color: white;
+}
+
+/* стили для основного содержимого */
+
+.container {
+	margin: 60px auto 0px;
+	padding: 0 20px;
+	max-width: 950px;
+	background-color: white;
+}
+
+@media (max-width: 420px) {
+	.container {padding: 0 0px;}
+}
+
+.banner {
+	display: flex;
+	justify-content: center;
+	overflow-x: hidden; /* запрет на появление полосы прокрутки */
+}
+
+#banner {
+	max-width: 950px;
+}
+
+@media (max-width: 450px) {
+	#banner {max-width: 450px;}
+}
+
+.menu {
+	display: flex;
+	margin-top: 20px;
+	height: 40px;
+	background-color: green;
+	color: white;
+	font-size: 21px;
+}
+
+.menu-left, .menu-right {
+	position: relative;
+	display: flex;
+	flex-basis: 25%;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 420px) {
+	.menu-left, .menu-right {font-size: 18px;}
+}
+
+@media (max-width: 370px) {
+	.menu-left, .menu-right {font-size: 16px;}
+}
+
+.menu-left:hover, .menu-right:hover {
+	background-color: white;
+	color: green;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.menu-left .spisok, .menu-right .spisok {
+	position: absolute;
+	max-width: 300px;
+	width: 31vw;
+	top: 40px;
+	text-align: left;
+	background-color: white;
+	visibility: hidden;
+}
+
+.menu-left .spisok {
+	left: 0;
+}
+
+.menu-right .spisok {
+	right: 0;
+}
+
+.spisok {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	z-index: 2;
+	border-radius: 0 0 20px 20px;
+}
+
+.spisok a {
+	display: block;
+	font-size: 18px;
+	line-height: 1.5;
+	padding-left: 20px;
+	color: blue;
+	text-decoration: none;
+}
+
+.spisok a:hover {
+	text-decoration: underline;
+}
+
+.menu-left:hover .spisok, .menu-right:hover .spisok {
+	visibility: visible;
+}
+
+@media (max-width: 420px) {
+	.spisok a {font-size: 16px; padding-left: 10px;}
+}
+
+.ton {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.3;
+	visibility: hidden;
+}
+
+.menu-left:hover ~ .ton, .menu-right:hover ~ .ton {
+	visibility: visible;
+}
+
+/* стили для колонок */
+
+.content {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 420px) {
+	.content {padding-left: 20px; padding-right: 20px;}
+}
+
+@media (max-width: 680px) {
+	.content {flex-direction: column;}
+}
+
+.column1 {
+	margin-right: 20px;
+}
+
+@media (max-width: 950px) {
+	.column1 h2 {font-size: 18px;}
+}
+
+@media (max-width: 800px) {
+	.column1 h2 {font-size: 16px;}
+}
+
+@media (max-width: 680px) {
+	.column1 h2 {font-size: 18px;}
+}
+
+ul {
+	list-style-type: circle;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+li a {
+	color: blue;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+.column2 {
+	text-align: justify;
+}
+
+img#vagonka {
+	max-width: 300px;
+	width: 30vw;
+	float: left;
+	margin-right: 10px;
+}
+
+img#zod {
+	max-width: 300px;
+	width: 30vw;
+	float: left;
+	margin-right: 10px;
+}
+
+/* стили для футера */
+
+.foote, .footer {
+	background-color: #C4CD14;
+}
+
+.foote {
+	margin: 0 -20px;
+	height: 100px;
+}
+
+.footer {
+	margin-top: -150px;
+}
+
+.footer .container {
+	background-color: #C4CD14;
+}
+
+.footer .container a:hover {
+	color: crimson;
+}
